@@ -1,6 +1,3 @@
-CREATE DATABASE cajeroJuanjo;
-USE cajeroJuanjo;
-
 CREATE TABLE clientes (
     id int(5) NOT NULL,
     numtarjeta int(4) NOT NULL,

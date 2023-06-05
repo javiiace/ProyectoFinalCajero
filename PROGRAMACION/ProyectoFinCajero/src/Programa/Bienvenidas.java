@@ -20,11 +20,11 @@ import javax.swing.Timer;
  *
  * @author Administrador
  */
-public class bienvenidos extends javax.swing.JFrame {
+public class Bienvenidas extends javax.swing.JFrame {
 
-    private operaciones operaciones;
+    private PantallaOperaciones operaciones;
 
-    public bienvenidos() {
+    public Bienvenidas() {
         initComponents();
         initVentana();
         initBD();
@@ -61,7 +61,7 @@ public class bienvenidos extends javax.swing.JFrame {
 
     private void initBD() {
 
-        conexion = Conexion.mySQL("cajerojuanjo", "root", "");
+        conexion = Conexion.mySQL("bdproyectocajero", "root", "");
         if (conexion == null) {
             JOptionPane.showMessageDialog(this, "Error, no se pudo conectar a la base de datos", "ERROR", JOptionPane.ERROR_MESSAGE);
             System.exit(0);
@@ -77,7 +77,7 @@ public class bienvenidos extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        numeros = new javax.swing.JPanel();
+        panTeclado = new javax.swing.JPanel();
         btn1 = new javax.swing.JButton();
         btn2 = new javax.swing.JButton();
         btn3 = new javax.swing.JButton();
@@ -87,25 +87,28 @@ public class bienvenidos extends javax.swing.JFrame {
         btn7 = new javax.swing.JButton();
         btn8 = new javax.swing.JButton();
         btn9 = new javax.swing.JButton();
-        nulo1 = new javax.swing.JButton();
-        btn0 = new javax.swing.JButton();
-        nulo2 = new javax.swing.JButton();
-        botones = new javax.swing.JPanel();
-        btnRetroceder = new javax.swing.JButton();
         btnBorrar = new javax.swing.JButton();
+        btn0 = new javax.swing.JButton();
         btnConfirmar = new javax.swing.JButton();
-        lblFecha = new javax.swing.JLabel();
-        lblHora = new javax.swing.JLabel();
-        jPanel7 = new javax.swing.JPanel();
-        jLabel6 = new javax.swing.JLabel();
+        panTarjetas = new javax.swing.JPanel();
+        lblTarjeta = new javax.swing.JLabel();
         txfID = new javax.swing.JTextField();
-        jLabel1 = new javax.swing.JLabel();
+        lblPin = new javax.swing.JLabel();
         txfPin = new javax.swing.JTextField();
+        lblCambioIdioma = new javax.swing.JLabel();
+        lblTextoBienvenida1 = new javax.swing.JLabel();
+        panSuperior = new javax.swing.JPanel();
+        lblHora = new javax.swing.JLabel();
+        lblFecha = new javax.swing.JLabel();
+        cmbIdioma = new javax.swing.JComboBox<>();
+        jPanel1 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(153, 153, 255));
+        setResizable(false);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        numeros.setLayout(new java.awt.GridLayout(4, 0));
+        panTeclado.setLayout(new java.awt.GridLayout(4, 0));
 
         btn1.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         btn1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/one.png"))); // NOI18N
@@ -114,7 +117,7 @@ public class bienvenidos extends javax.swing.JFrame {
                 btn1ActionPerformed(evt);
             }
         });
-        numeros.add(btn1);
+        panTeclado.add(btn1);
 
         btn2.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         btn2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/two.png"))); // NOI18N
@@ -123,7 +126,7 @@ public class bienvenidos extends javax.swing.JFrame {
                 btn2ActionPerformed(evt);
             }
         });
-        numeros.add(btn2);
+        panTeclado.add(btn2);
 
         btn3.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         btn3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/three.png"))); // NOI18N
@@ -132,7 +135,7 @@ public class bienvenidos extends javax.swing.JFrame {
                 btn3ActionPerformed(evt);
             }
         });
-        numeros.add(btn3);
+        panTeclado.add(btn3);
 
         btn4.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         btn4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/four.png"))); // NOI18N
@@ -141,7 +144,7 @@ public class bienvenidos extends javax.swing.JFrame {
                 btn4ActionPerformed(evt);
             }
         });
-        numeros.add(btn4);
+        panTeclado.add(btn4);
 
         btn5.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         btn5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/five.png"))); // NOI18N
@@ -150,7 +153,7 @@ public class bienvenidos extends javax.swing.JFrame {
                 btn5ActionPerformed(evt);
             }
         });
-        numeros.add(btn5);
+        panTeclado.add(btn5);
 
         btn6.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         btn6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/six.png"))); // NOI18N
@@ -159,7 +162,7 @@ public class bienvenidos extends javax.swing.JFrame {
                 btn6ActionPerformed(evt);
             }
         });
-        numeros.add(btn6);
+        panTeclado.add(btn6);
 
         btn7.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         btn7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/seven.png"))); // NOI18N
@@ -168,7 +171,7 @@ public class bienvenidos extends javax.swing.JFrame {
                 btn7ActionPerformed(evt);
             }
         });
-        numeros.add(btn7);
+        panTeclado.add(btn7);
 
         btn8.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         btn8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/eight.png"))); // NOI18N
@@ -177,7 +180,7 @@ public class bienvenidos extends javax.swing.JFrame {
                 btn8ActionPerformed(evt);
             }
         });
-        numeros.add(btn8);
+        panTeclado.add(btn8);
 
         btn9.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         btn9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/nine.png"))); // NOI18N
@@ -186,33 +189,7 @@ public class bienvenidos extends javax.swing.JFrame {
                 btn9ActionPerformed(evt);
             }
         });
-        numeros.add(btn9);
-
-        nulo1.setEnabled(false);
-        numeros.add(nulo1);
-
-        btn0.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
-        btn0.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/zero.png"))); // NOI18N
-        btn0.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn0ActionPerformed(evt);
-            }
-        });
-        numeros.add(btn0);
-
-        nulo2.setEnabled(false);
-        numeros.add(nulo2);
-
-        botones.setLayout(new java.awt.GridLayout(3, 0));
-
-        btnRetroceder.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
-        btnRetroceder.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/rArrow.png"))); // NOI18N
-        btnRetroceder.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnRetrocederActionPerformed(evt);
-            }
-        });
-        botones.add(btnRetroceder);
+        panTeclado.add(btn9);
 
         btnBorrar.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         btnBorrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/cancel.png"))); // NOI18N
@@ -221,7 +198,16 @@ public class bienvenidos extends javax.swing.JFrame {
                 btnBorrarActionPerformed(evt);
             }
         });
-        botones.add(btnBorrar);
+        panTeclado.add(btnBorrar);
+
+        btn0.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        btn0.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/zero.png"))); // NOI18N
+        btn0.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn0ActionPerformed(evt);
+            }
+        });
+        panTeclado.add(btn0);
 
         btnConfirmar.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         btnConfirmar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/enter.png"))); // NOI18N
@@ -230,71 +216,72 @@ public class bienvenidos extends javax.swing.JFrame {
                 btnConfirmarActionPerformed(evt);
             }
         });
-        botones.add(btnConfirmar);
+        panTeclado.add(btnConfirmar);
 
-        lblFecha.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        getContentPane().add(panTeclado, new org.netbeans.lib.awtextra.AbsoluteConstraints(192, 293, 412, 320));
 
-        lblHora.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        panTarjetas.setLayout(new java.awt.GridLayout(2, 0));
 
-        jPanel7.setLayout(new java.awt.GridLayout(2, 0));
-
-        jLabel6.setFont(new java.awt.Font("Consolas", 0, 18)); // NOI18N
-        jLabel6.setText("Introduzca su tarjeta:");
-        jPanel7.add(jLabel6);
+        lblTarjeta.setFont(new java.awt.Font("Consolas", 0, 18)); // NOI18N
+        lblTarjeta.setText("Introduzca su tarjeta:");
+        panTarjetas.add(lblTarjeta);
 
         txfID.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         txfID.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jPanel7.add(txfID);
+        panTarjetas.add(txfID);
 
-        jLabel1.setFont(new java.awt.Font("Consolas", 0, 18)); // NOI18N
-        jLabel1.setText("Intrudzca su pin:");
-        jPanel7.add(jLabel1);
+        lblPin.setFont(new java.awt.Font("Consolas", 0, 18)); // NOI18N
+        lblPin.setText("Intruduzca su pin:");
+        panTarjetas.add(lblPin);
 
         txfPin.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         txfPin.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jPanel7.add(txfPin);
+        panTarjetas.add(txfPin);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(lblFecha, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(lblHora, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(199, 199, 199)
-                        .addComponent(numeros, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(8, 8, 8)
-                        .addComponent(botones, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(207, Short.MAX_VALUE))
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(115, 115, 115)
-                    .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, 547, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(153, Short.MAX_VALUE)))
+        getContentPane().add(panTarjetas, new org.netbeans.lib.awtextra.AbsoluteConstraints(115, 205, 547, -1));
+
+        lblCambioIdioma.setFont(new java.awt.Font("Consolas", 0, 18)); // NOI18N
+        lblCambioIdioma.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblCambioIdioma.setText("Si su idioma nativo no es el Español, cámbielo en la parte superior derecha");
+        getContentPane().add(lblCambioIdioma, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 145, 805, 38));
+
+        lblTextoBienvenida1.setFont(new java.awt.Font("Consolas", 0, 18)); // NOI18N
+        lblTextoBienvenida1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblTextoBienvenida1.setText("Bienvenido al banco galileo, siga los pasos que se le piden debajo");
+        getContentPane().add(lblTextoBienvenida1, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 101, 805, 38));
+
+        panSuperior.setLayout(new java.awt.GridLayout());
+
+        lblHora.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        panSuperior.add(lblHora);
+
+        lblFecha.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        panSuperior.add(lblFecha);
+
+        cmbIdioma.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        cmbIdioma.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmbIdiomaActionPerformed(evt);
+            }
+        });
+        panSuperior.add(cmbIdioma);
+
+        getContentPane().add(panSuperior, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 6, 805, 34));
+
+        jPanel1.setBackground(new java.awt.Color(153, 153, 255));
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 830, Short.MAX_VALUE)
         );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(lblHora, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblFecha, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 277, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(numeros, javax.swing.GroupLayout.PREFERRED_SIZE, 320, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(botones, javax.swing.GroupLayout.PREFERRED_SIZE, 320, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(40, 40, 40))
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(62, 62, 62)
-                    .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(408, Short.MAX_VALUE)))
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 680, Short.MAX_VALUE)
         );
+
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-4, -7, 830, 680));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -338,15 +325,6 @@ public class bienvenidos extends javax.swing.JFrame {
     private void btn0ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn0ActionPerformed
         txfPin.setText(txfPin.getText() + "0");
     }//GEN-LAST:event_btn0ActionPerformed
-
-    private void btnRetrocederActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRetrocederActionPerformed
-        try {
-            String pincogido = txfPin.getText();
-            String modificado = pincogido.substring(0, pincogido.length() - 1);
-            txfPin.setText(modificado);
-        } catch (StringIndexOutOfBoundsException ex) {
-        }
-    }//GEN-LAST:event_btnRetrocederActionPerformed
 
     private void btnBorrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBorrarActionPerformed
         txfPin.setText("");
@@ -394,7 +372,7 @@ public class bienvenidos extends javax.swing.JFrame {
                         operaciones.setVisible(true);
                         this.dispose();
                     } else {
-                        operaciones = new operaciones(t, c);
+                        operaciones = new PantallaOperaciones(t, c);
                         operaciones.setVisible(true);
                         this.dispose();
                     }
@@ -405,10 +383,21 @@ public class bienvenidos extends javax.swing.JFrame {
             }
 
         } catch (SQLException ex) {
-            Logger.getLogger(bienvenidos.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Bienvenidas.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_btnConfirmarActionPerformed
 
+    private void cmbIdiomaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbIdiomaActionPerformed
+        String idioma= String.valueOf(cmbIdioma.getSelectedItem());
+        
+    }//GEN-LAST:event_cmbIdiomaActionPerformed
+
+    private void cambiarIdioma(String nombreIdioma){
+        Idioma idioma = new Idioma(nombreIdioma);
+        
+        
+    }
+    
     /**
      * @param args the command line arguments
      */
@@ -426,26 +415,26 @@ public class bienvenidos extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(bienvenidos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Bienvenidas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(bienvenidos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Bienvenidas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(bienvenidos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Bienvenidas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(bienvenidos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Bienvenidas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new bienvenidos().setVisible(true);
+                new Bienvenidas().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel botones;
     private javax.swing.JButton btn0;
     private javax.swing.JButton btn1;
     private javax.swing.JButton btn2;
@@ -458,15 +447,17 @@ public class bienvenidos extends javax.swing.JFrame {
     private javax.swing.JButton btn9;
     private javax.swing.JButton btnBorrar;
     private javax.swing.JButton btnConfirmar;
-    private javax.swing.JButton btnRetroceder;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JPanel jPanel7;
+    private javax.swing.JComboBox<String> cmbIdioma;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JLabel lblCambioIdioma;
     private javax.swing.JLabel lblFecha;
     private javax.swing.JLabel lblHora;
-    private javax.swing.JButton nulo1;
-    private javax.swing.JButton nulo2;
-    private javax.swing.JPanel numeros;
+    private javax.swing.JLabel lblPin;
+    private javax.swing.JLabel lblTarjeta;
+    private javax.swing.JLabel lblTextoBienvenida1;
+    private javax.swing.JPanel panSuperior;
+    private javax.swing.JPanel panTarjetas;
+    private javax.swing.JPanel panTeclado;
     private javax.swing.JTextField txfID;
     private javax.swing.JTextField txfPin;
     // End of variables declaration//GEN-END:variables
